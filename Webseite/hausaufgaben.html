@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hausaufgaben & KI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script src="main.js"></script>
+
+<body class="page-hausaufgaben">
+  <header class="site-header">
+    <div class="container">
+      <h1>EidP: Tipps & Ressourcen</h1>
+      <nav class="nav">
+        <a href="index.html">Start</a>
+        <a href="hausaufgaben.html">Hausaufgaben & KI</a>
+        <a href="ressourcen.html">Zusätzliche Lernressourcen</a>
+        <a href="about.html">Über die Seite</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="lead">
+      <h2>Wie bei Übungsaufgaben vorgehen und wie die KI benutzen?</h2>
+    </section>
+    <section class="instructions">
+      <ol>
+        <li>
+          Probiere erstmal mithilfe der Vorlesungsfolien und der Python-Dokumentation, auf Lösungen zu kommen.
+          <article class="card">
+            <details class="toggle">
+              <summary>Tipps zum Umgang mit der Dokumentation</summary>
+              <a href="https://www.youtube.com/watch?v=s1PLS3SQHQ0">Videoanleitung</a> (nur bis Minute 09:06)<br>
+              Kurze Zusammenfassung vom Video:
+              <ul>
+                <li>Lies die Dokumentation nicht von vorne nach hinten, sondern benutze sie als Nachschlagewerk</li>
+                <li>Benutze dafür die Suchfunktion auf der Seite der Dokumentation oder den "General Index"</li>
+                <li>Wenn du z. B. etwas mit Listen machen willst, überfliege die Methoden und Attribute von der Klasse
+                  list und schaue, ob da etwas Passendes zu deinem Vorhaben dabei ist</li>
+                <li>Wenn du eine Methode oder ein Attribut gefunden hast, das passend scheint, schau dir nicht nur die
+                  Textbeschreibung an, sondern auch die Beispiele unten auf der Seite</li>
+              </ul>
+            </details>
+            <details class="toggle">
+              <summary>Warum so vorgehen?</summary>
+              Drei Gründe:
+              <ol>
+                <li>Beim Durchforsten der Vorlesungsfolien wiederholst du die Inhalte und strukturierst gleichzeitig
+                  (unbewusst) die Informationen aus den Folien räumlich in deinem Kopf, sodass du sie dir besser
+                  merkst.</li>
+                <li>In der Klausur hast du keine KI, sondern nur die Python-Dokumentation. Es ist eine Fähigkeit an
+                  sich, mit der Python-Dokumentation umzugehen, die du für die Klausur am besten auch üben und
+                  automatisieren solltest.</li>
+                <li>Beim Überfliegen der Dokumentation stößt du auf neue Methoden und Attribute, die später nützlich
+                  sind. Wenn du zu dem gegebenen Zeitpunkt in der Zukunft auf ein neues Problem stößt, wo eine der
+                  überflogenen Elemente passen könnte, wirst du dich zurückerinnern, dass du so etwas Ähnliches schon
+                  mal gesehen hast. So steigt die Wahrscheinlichkeit, dass du neue Methoden und Attribute kennenlernst
+                  und nutzt.
+                </li>
+              </ol>
+            </details>
+          </article>
+        </li>
+        <li>
+          Nutze die KI nur, wenn du stecken bleibst. Stecken bleiben heißt:
+          <ul>
+            <li>Du verstehst die Aufgabe nicht und brauchst eine Erklärung der Aufgabe, ODER:</li>
+            <li>
+              Du verstehst die Aufgabe, aber dir fehlt ein Ansatz oder du kämpfst mit Bugs. In dem Fall heißt stecken
+              bleiben:
+              <ul>
+                <li>Du hast alle relevanten Informationen aus der Vorlesung und in der Dokumentation angeschaut UND</li>
+                <li>Du hast kurz eigenständig nachgedacht und versucht, das Problem selbst in Teilprobleme zu zerlegen,
+                  hast akiv nach anderen Herangehensweisen als deine aktuelle Lösung gesucht und kommst trotzdem nicht
+                  weiter</li>
+              </ul>
+            </li>
+          </ul>
+
+          Wenn eines der beiden Fälle eintritt, scheue nicht davor zurück, die KI zu nutzen, aber auf einer
+          intelligenten Art und Weise.
+
+          <article class="card">
+            <details class="toggle">
+              <summary>Vorlagen für Prompts für ChatGPT & co.</summary>
+              Lass dir keine vollständigen Lösungen anzeigen, sondern Hinweise und Hilfestellungen zu deinem konkreten
+              Problem liefern. Warum? Du bekommst Lösungen zu den Übungsaufgaben als Musterlösung und diese werden
+              zusätzlich im Tutorat besprochen. Verschenke kein Lernporenzial für die Klausur: Mache eigene Fehler und
+              lerne daraus!<br>
+              So nutzt du die KI richtig:
+              <ul>
+                <li>
+                  <div class="prompt">
+                    <div class="prompt-title">Aufgabe nicht verstanden</div>
+                    <button class="copy-btn" data-target="prompt-1"
+                      aria-label="Prompt in Zwischenablage kopieren">Kopieren</button>
+                    <pre id="prompt-1"
+                      class="prompt-text">"Ich bin Informatikstudent*in im 1. Semester und Python-Anfänger*in. Du bist Informatik-Tutor. Ich habe folgende Aufgabestellung bekommen: [hier die Aufgabe reinkopieren]. Kannst du mir die Aufgabe erklären, ein paar Input-Beispiele und die dazugehörigen Output-Beispiele zeigen und erklären, wie der Input zum jeweiligen Output führt? Bitte liefere mir keine Lösungen und Teillösungen zu der Aufgabe."</pre>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="prompt-group">
+                    <div class="prompt">
+                      <div class="prompt-title">Schwierigkeiten beim Lösungsansatz</div>
+                      <button class="copy-btn" data-target="prompt-2"
+                        aria-label="Prompt in Zwischenablage kopieren">Kopieren</button>
+                      <pre id="prompt-2"
+                        class="prompt-text">"Ich bin Informatikstudent*in im 1. Semester und Python-Anfänger*in. Du bist Informatik-Tutor. Ich habe folgende Aufgabestellung bekommen: [hier die Aufgabe reinkopieren]. Bitte liefere mir keine Lösung und auch keinen Lösungsweg. Kannst du mir stattdessen durch offene Fragen helfen, unterschiedliche Herangehensweisen zu reflektieren und selbst auf einen Pseudo-Code zu kommen? Stelle eine Frage pro Nachricht, warte auf meine Antwort und passe die nächste Frage an. Jetzt nur die erste Frage senden und stoppen."</pre>
+                    </div>
+                    <div class="prompt">
+                      <br>
+                      <button class="copy-btn" data-target="prompt-3"
+                        aria-label="Prompt in Zwischenablage kopieren">Kopieren</button>
+                      <pre id="prompt-3" class="prompt-text">"Ich bin Informatikstudent*in im 1. Semester und Python-Anfänger*in. Du bist Informatik-Tutor. Ich habe folgende Aufgabestellung bekommen: [hier die Aufgabe reinkopieren]. Kannst du eine andere, aber ähnliche Aufgabe erstellen, die dasselbe Problem behandelt, sowie einen dazugehörigen Lösungscode, und mir den Code erklären? Bitte liefere keine Lösung zu der eigentlichen Aufgabe."
+                  </pre>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="prompt">
+                    <div class="prompt-title">Du verstehst einen Fehlercode beim Ausführen deines Programms nicht</div>
+                    <button class="copy-btn" data-target="prompt-4"
+                      aria-label="Prompt in Zwischenablage kopieren">Kopieren</button>
+                    <pre id="prompt-4"
+                      class="prompt-text">"Ich habe folgenden Code geschrieben: [hier Code reinkopieren]. Ich bekomme die Fehlermeldung: [hier Fehlermeldung reinkopieren]. Kannst du mir Fehlermeldung erklären, ohne eine Lösung auf das Problem zu verraten? Bitte möglichst einfach erklären und Fachbegriffe vermeiden, ich bin Python- und Programmier-Anfänger*in."</pre>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="prompt">
+                    <div class="prompt-title">Du hast ein Programm geschrieben, verstehst die Fehlercodes, aber weißt
+                      nicht, wie du dein Programm
+                      reparierst</div>
+                    <button class="copy-btn" data-target="prompt-5"
+                      aria-label="Prompt in Zwischenablage kopieren">Kopieren</button>
+                    <pre id="prompt-5" class="prompt-text">"Ich bin Informatikstudent*in im 1. Semester und Python-Anfänger*in. Du bist Informatik-Tutor. Ich habe folgende Aufgabestellung bekommen: [hier die Aufgabe reinkopieren]. Ich habe folgenden Code geschrieben, aber er führt zu Fehlern: [hier Code reinkopieren]. Bitte liefere mir keine Lösungen. Hilf mir stattdessen mit Multiple-Choice-Fragen (A-D), selbst das Problem und den Lösungsweg zu verstehen. Stelle genau eine Frage pro Nachricht, warte auf meine A/B/C/D-Antwort und passe die nächste Frage an. Jetzt nur die erste Frage senden und stoppen."
+                </pre>
+                  </div>
+                </li>
+              </ul>
+            </details>
+            <details class="toggle">
+              <summary>Selbst Prompts formulieren: Prinzipien</summary>
+              Langfristig solltest du selbst Prompts schreiben und in Dialog mit der KI treten. Wichtig ist dabei, dass
+              du dir <b>keine direkten Lösungen</b> anzeigen lässt. Meine Erfahrung mit ChatGPT ist z. B., dass es sehr schnell anfängt, Lösungen zu verraten, wenn man es nicht explizit davon abhält.
+              Hier sind helfende Prinzipien:
+              <ul>
+                <li>
+                  Empfohlen wird, folgende 5 Kontextinformationen angeben:
+                  <ol>
+                    <li>In welche Rolle soll die KI schlüpfen: In unserem Fall eigentlich immer Informatik-Lehrerin oder -Tutor</li>
+                    <li>Was ist dein Niveau: Anfänger*in / mit Vorkenntnissen / du beherrschst die Grundalgen / Fortgeschritten?</li>
+                    <li>Problemkontext: Was ist die Aufgabe, was ist dein Code (falls vorhanden), was ist die Ausgabe (falls vorhanden)</li>
+                    <li>Problemnennung: Was genau ist dein Problem? Welche präzise Stelle oder Frage bereitet dir Schwierigkeiten?</li>
+                    <li>Guardrails: Setze der KI Grenzen, wie viel sie dir helfen darf. Typischerweise: "Bitte nicht die Lösung verraten" oder "Bitte schreibe mir keine ganzen Code-Blöcke, aber du kannst mir hilfreiche Stichwörter und Funktionen nennen"</li>
+                  </ol>
+                  Zusätlich wird empfohlen, der KI genau zu sagen, in welchem Format sie helfen soll. Soll sie dir Fragen stellen? Oder soll sie dir einfach etwas mit Beispielen erklären?<br>
+                  Im folgenden Bild siehst du, wie man alle diese Punkte in einem Prompt vereinen kann, nebst einem Negativbeispiel: <br>
+                  <img src="pedagogical-prompts.png" alt="Positives und negatives Promptbeispiel">
+                </li>
+                </ul>
+            </details>
+          </article>
+        </li>
+      </ol>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,418 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2937;
+  --muted: #6b7280;
+  --card: #f8fafc;
+  --accent: #2563eb;
+  --radius: 14px;
+  --maxw: 980px;
+
+  /* Vereinheitlichte Design-Tokens */
+  --hairline: rgba(0, 0, 0, .06);
+  --hairline-strong: rgba(0, 0, 0, .12);
+  --divider: rgba(0, 0, 0, .10);
+  --panel-tint: rgba(0, 0, 0, .02);
+  --code-bg: rgba(0, 0, 0, .04);
+
+  /* Spacing-Scale */
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 20px;
+  --space-5: 28px;
+  --space-6: 40px;
+
+  /* weiche Akzentfläche */
+  --accent-soft: rgba(37, 99, 235, .06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f14;
+    --fg: #e5e7eb;
+    --muted: #9ca3af;
+    --card: #111827;
+    --accent: #60a5fa;
+
+    --hairline: rgba(255, 255, 255, .08);
+    --hairline-strong: rgba(255, 255, 255, .16);
+    --divider: rgba(255, 255, 255, .14);
+    --panel-tint: rgba(255, 255, 255, .02);
+    --code-bg: rgba(255, 255, 255, .06);
+
+    --accent-soft: rgba(96, 165, 250, .12);
+  }
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, ui-sans-serif, Arial;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+/* Fokus-Styles (A11y) */
+:where(a, button, [role="button"]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Layout-Helfer */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--hairline);
+  background: linear-gradient(180deg, var(--panel-tint), transparent);
+  backdrop-filter: saturate(120%);
+}
+
+.site-header .container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.site-header h1 {
+  white-space: nowrap;
+}
+
+/* Headings */
+h1 {
+  font-size: 20px;
+  margin: 0
+}
+
+h2 {
+  margin: var(--space-5) 0 var(--space-2);
+  line-height: 1.25;
+}
+
+h3 {
+  margin: var(--space-4) 0 var(--space-2);
+  line-height: 1.3;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.nav a {
+  padding: 6px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.nav a[aria-current="page"] {
+  background: var(--card)
+}
+
+.nav a:hover {
+  text-decoration: none;
+  background: var(--accent-soft);
+}
+
+/* Intro/Lead */
+.lead {
+  padding: 28px 0 8px
+}
+
+.lead p {
+  font-size: 1.05rem;
+}
+
+/* Absätze & Listen – Rhythmus */
+main :where(p) {
+  margin: 0 0 var(--space-3);
+}
+
+main :where(ul, ol) {
+  margin: 0 0 var(--space-4);
+  padding-left: 1.25rem;
+}
+
+main :where(li + li) {
+  margin-top: var(--space-2);
+}
+
+main :where(ul ul, ol ol) {
+  margin-top: var(--space-2);
+}
+
+/* Grid-Karten */
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: 10px 0 32px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .02);
+  transition: box-shadow .15s ease, transform .05s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+}
+
+.card h3 {
+  margin: 6px 0 10px;
+  font-size: 18px;
+}
+
+/* Details/Accordion */
+.toggle {
+  margin: var(--space-3) 0;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 6px 10px;
+  background: var(--panel-tint);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .02);
+  transition: box-shadow .15s ease;
+}
+
+.toggle:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+}
+
+.toggle>summary {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-style: italic;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle>summary::after {
+  content: '▸';
+  font-size: 12px;
+  opacity: .6;
+  transition: transform .15s ease;
+  margin-left: auto;
+  /* Caret rechts */
+}
+
+.toggle>summary::-webkit-details-marker {
+  display: none
+}
+
+.toggle[open] {
+  background: transparent;
+  padding-top: 10px
+}
+
+.toggle[open]>summary::after {
+  transform: rotate(90deg);
+  opacity: .8
+}
+
+/* Inhalt in <details> bekommt innen Luft */
+.toggle> :not(summary) {
+  margin-top: var(--space-2);
+}
+
+/* Bilder & Centering */
+.center {
+  text-align: center
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  border-radius: 10px;
+  margin-bottom: var(--space-3);
+}
+
+/* Tabellen (für Bild-Galerien) */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4) 0;
+}
+
+main td {
+  vertical-align: top;
+  padding: var(--space-2);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  padding: 16px 0;
+  color: var(--muted);
+}
+
+/* Abstände in Anleitungs-Liste */
+.instructions>ol>li {
+  margin: 22px 0 28px;
+}
+
+.instructions>ol>li>.card {
+  margin-top: 10px;
+}
+
+/* Prompt-Gruppen */
+.prompt-group {
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background:
+    linear-gradient(0deg, var(--panel-tint), var(--panel-tint)),
+    var(--card);
+  margin: 12px 0;
+  padding: 0;
+  /* Rahmen gehört der Gruppe */
+}
+
+/* Prompt-Karten (einzeln & in Gruppen) */
+.prompt,
+.prompt-group .prompt {
+  position: relative;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background:
+    linear-gradient(0deg, var(--panel-tint), var(--panel-tint)),
+    var(--card);
+  padding: 12px 72px 14px 12px;
+  /* rechts Platz für Copy-Button */
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+/* Unterschiede innerhalb der Gruppe */
+.prompt-group .prompt {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+.prompt-group .prompt+.prompt {
+  border-top: 1px solid var(--divider);
+}
+
+/* Inhalt in Prompt-Karten */
+.prompt .prompt-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--fg);
+  letter-spacing: .002em;
+  opacity: .95;
+}
+
+.prompt .prompt-text {
+  margin: 0;
+  white-space: pre-wrap;
+  /* umbruchfähig */
+  word-break: break-word;
+  font: 13.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+/* Copy-Button */
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--hairline-strong);
+  background: transparent;
+  cursor: pointer;
+  font: 13px/1 system-ui, -apple-system, Segoe UI, Roboto, ui-sans-serif, Arial;
+}
+
+.copy-btn:hover {
+  background: var(--accent-soft);
+}
+
+.copy-btn:active {
+  transform: translateY(1px);
+}
+
+/* Zusätzlicher Abstand, wenn Prompts außerhalb von Gruppen gestapelt sind */
+.toggle .prompt+.prompt {
+  margin-top: 14px;
+}
+
+/* Mobile-Anpassungen */
+@media (max-width: 420px) {
+  .copy-btn {
+    position: static;
+    float: right;
+    margin: 4px 0 8px 8px;
+  }
+
+  .prompt,
+  .prompt-group .prompt {
+    padding-right: 12px;
+    /* wenn Button nicht absolut ist */
+  }
+}
+
+/* Extra Bottom-Spacing für Content-Bereich (global) */
+main.container {
+  padding-bottom: 80px;
+}
+
+@media (min-width: 900px) {
+  main.container {
+    padding-bottom: 110px;
+  }
+}
+
+/* Dark-Mode Schattenanpassung */
+@media (prefers-color-scheme: dark) {
+
+  .card,
+  .toggle {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
+  }
+
+  .card:hover,
+  .toggle:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
+  }
+}
