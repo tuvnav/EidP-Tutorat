@@ -24,6 +24,13 @@
 
   /* weiche Akzentfläche */
   --accent-soft: rgba(37, 99, 235, .06);
+
+  --emph-bg: #eaf2ff;
+  /* zartes Blau */
+  --emph-border: #3b82f6;
+  /* Blau 500 */
+  --emph-glow: rgba(59, 130, 246, .18);
+  /* weicher Glow */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,6 +48,12 @@
     --code-bg: rgba(255, 255, 255, .06);
 
     --accent-soft: rgba(96, 165, 250, .12);
+
+    --emph-bg: rgba(96, 165, 250, .20);
+    /* etwas transparenter im Dark Mode */
+    --emph-border: #93c5fd;
+    /* Blau 300–400 als Border */
+    --emph-glow: rgba(147, 197, 253, .28);
   }
 }
 
@@ -218,7 +231,6 @@ main :where(ul ul, ol ol) {
   cursor: pointer;
   list-style: none;
   font-weight: 600;
-  font-style: italic;
   align-items: center;
   gap: 8px;
 }
@@ -415,4 +427,71 @@ main.container {
   .toggle:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
   }
+}
+
+/* Globales Styling für <strong> */
+:where(strong) {
+  /* Form */
+  display: inline-block;
+  padding: .18em .6em .24em;
+  /* mehr Abstand zum Rahmen */
+  margin: 0 .12em;
+  /* leichte Außenluft */
+  background:
+    linear-gradient(180deg, var(--emph-bg), color-mix(in oklab, var(--emph-bg) 80%, transparent));
+  /* Typografie */
+  font: 700 1.18em/1.2 "Ibarra Real Nova", "Fraunces", "Cormorant Garamond",
+    "Spectral", "Georgia", "Cambria", "Times New Roman", Times, serif;
+  font-variant-ligatures: common-ligatures contextual;
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+  letter-spacing: .005em;
+
+  /* „Special Effects“ (dezent) */
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, .05),
+    /* subtile Tiefe */
+    0 0 0 2px color-mix(in oklab, var(--emph-glow) 50%, transparent);
+  /* weicher Außenring */
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .35);
+  /* leichte Aufhellung der Schrift */
+  transition: box-shadow .2s ease, background .2s ease, transform .05s ease;
+  vertical-align: baseline;
+}
+
+:where(strong):hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, .06),
+    0 0 0 3px color-mix(in oklab, var(--emph-glow) 70%, transparent);
+}
+
+:where(strong):focus-visible {
+  outline: 2px solid var(--emph-border);
+  outline-offset: 3px;
+}
+
+/* In Überschriften etwas zivilisieren, damit es nicht „brüllt“ */
+h1 :where(strong),
+h2 :where(strong),
+h3 :where(strong) {
+  font-size: 1.08em;
+}
+
+/* Ausnahme: in Monospace-Prompts neutral lassen (keine Chips im Codeblock) */
+.prompt-text :where(strong) {
+  display: inline;
+  font: 700 1em/inherit ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+/* Optional: „Plain“-Variante, falls du irgendwo den Chip bewusst deaktivieren willst */
+.strong-plain {
+  all: unset;
+  font-weight: 700;
+  font-style: italic;
 }

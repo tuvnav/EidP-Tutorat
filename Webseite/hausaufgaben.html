@@ -29,11 +29,11 @@
     <section class="instructions">
       <ol>
         <li>
-          Probiere erstmal mithilfe der Vorlesungsfolien und der Python-Dokumentation, auf Lösungen zu kommen.
+          Probiere erstmal mithilfe der Vorlesungsfolien und der Python-Dokumentation, auf Lösungen zu kommen. Wenn du die Aufgabe nicht verstehst oder stecken bleibst, hilft der Betreuungs-Chat über Git. 
           <article class="card">
             <details class="toggle">
               <summary>Tipps zum Umgang mit der Dokumentation</summary>
-              <a href="https://www.youtube.com/watch?v=s1PLS3SQHQ0">Videoanleitung</a> (nur bis Minute 09:06)<br>
+              <p><a href="https://www.youtube.com/watch?v=s1PLS3SQHQ0">Videoanleitung</a> (nur bis Minute 09:06)</p>
               Kurze Zusammenfassung vom Video:
               <ul>
                 <li>Lies die Dokumentation nicht von vorne nach hinten, sondern benutze sie als Nachschlagewerk</li>
@@ -67,29 +67,23 @@
         <li>
           Nutze die KI nur, wenn du stecken bleibst. Stecken bleiben heißt:
           <ul>
-            <li>Du verstehst die Aufgabe nicht und brauchst eine Erklärung der Aufgabe, ODER:</li>
-            <li>
-              Du verstehst die Aufgabe, aber dir fehlt ein Ansatz oder du kämpfst mit Bugs. In dem Fall heißt stecken
-              bleiben:
-              <ul>
-                <li>Du hast alle relevanten Informationen aus der Vorlesung und in der Dokumentation angeschaut UND</li>
-                <li>Du hast kurz eigenständig nachgedacht und versucht, das Problem selbst in Teilprobleme zu zerlegen,
-                  hast akiv nach anderen Herangehensweisen als deine aktuelle Lösung gesucht und kommst trotzdem nicht
-                  weiter</li>
-              </ul>
-            </li>
+            <li>Du hast die Vorlesungsfolien und Dokumentation auf die relevanten Informationen durchsucht.</li>
+            <li>Du hast im Betreuungs-Chat der Vorlesung nachgefragt.</li>
+            <li>Du hast eine Weile lang selbst nachgedacht, versucht, das Problem auf kleinere Teilprobleme zu
+              reduzieren und aktiv nach anderen Herangehensweisen gesucht.</li>
           </ul>
 
-          Wenn eines der beiden Fälle eintritt, scheue nicht davor zurück, die KI zu nutzen, aber auf einer
-          intelligenten Art und Weise.
+          Frag lieber zu viel im Betreuungs-Chat nach als zu wenig. Es ist sehr wahrscheinlich, dass sich andere
+          Studierende genau dieselbe Frage stellen wie du. Wenn du trotz all dieser Schritte nicht weiterkommst oder aus
+          sonstwelchen Gründen unbedingt die KI nutzen willst, dann nutze sie intelligent:
 
           <article class="card">
             <details class="toggle">
               <summary>Vorlagen für Prompts für ChatGPT & co.</summary>
-              Lass dir keine vollständigen Lösungen anzeigen, sondern Hinweise und Hilfestellungen zu deinem konkreten
+              <p>Lass dir keine vollständigen Lösungen anzeigen, sondern Hinweise und Hilfestellungen zu deinem konkreten
               Problem liefern. Warum? Du bekommst Lösungen zu den Übungsaufgaben als Musterlösung und diese werden
               zusätzlich im Tutorat besprochen. Verschenke kein Lernporenzial für die Klausur: Mache eigene Fehler und
-              lerne daraus!<br>
+              lerne daraus!</p>
               So nutzt du die KI richtig:
               <ul>
                 <li>
@@ -146,24 +140,36 @@
             </details>
             <details class="toggle">
               <summary>Selbst Prompts formulieren: Prinzipien</summary>
-              Langfristig solltest du selbst Prompts schreiben und in Dialog mit der KI treten. Wichtig ist dabei, dass
-              du dir <b>keine direkten Lösungen</b> anzeigen lässt. Meine Erfahrung mit ChatGPT ist z. B., dass es sehr schnell anfängt, Lösungen zu verraten, wenn man es nicht explizit davon abhält.
+              Langfristig solltest du selbst sinnvolle Prompts schreiben und in Dialog mit der KI treten können. Wichtig
+              ist dabei, dass
+              du dir <b>keine direkten Lösungen</b> anzeigen lässt. Meine Erfahrung mit ChatGPT ist z. B., dass es sehr
+              schnell anfängt, Lösungen zu verraten, wenn man es nicht explizit davon abhält.
               Hier sind helfende Prinzipien:
               <ul>
                 <li>
                   Empfohlen wird, folgende 5 Kontextinformationen angeben:
                   <ol>
-                    <li>In welche Rolle soll die KI schlüpfen: In unserem Fall eigentlich immer Informatik-Lehrerin oder -Tutor</li>
-                    <li>Was ist dein Niveau: Anfänger*in / mit Vorkenntnissen / du beherrschst die Grundalgen / Fortgeschritten?</li>
-                    <li>Problemkontext: Was ist die Aufgabe, was ist dein Code (falls vorhanden), was ist die Ausgabe (falls vorhanden)</li>
-                    <li>Problemnennung: Was genau ist dein Problem? Welche präzise Stelle oder Frage bereitet dir Schwierigkeiten?</li>
-                    <li>Guardrails: Setze der KI Grenzen, wie viel sie dir helfen darf. Typischerweise: "Bitte nicht die Lösung verraten" oder "Bitte schreibe mir keine ganzen Code-Blöcke, aber du kannst mir hilfreiche Stichwörter und Funktionen nennen"</li>
+                    <li>In welche Rolle soll die KI schlüpfen: In unserem Fall eigentlich immer Informatik-Lehrerin oder
+                      -Tutor</li>
+                    <li>Was ist dein Niveau: Anfänger*in / mit Vorkenntnissen / du beherrschst die Grundalgen /
+                      Fortgeschritten?</li>
+                    <li>Problemkontext: Was ist die Aufgabe, was ist dein Code (falls vorhanden), was ist die Ausgabe
+                      (falls vorhanden)</li>
+                    <li>Problemnennung: Was genau ist dein Problem? Welche präzise Stelle oder Frage bereitet dir
+                      Schwierigkeiten?</li>
+                    <li>Guardrails: Setze der KI Grenzen, wie viel sie dir helfen darf. Typischerweise: "Bitte nicht die
+                      Lösung verraten" oder "Bitte schreibe mir keine ganzen Code-Blöcke, aber du kannst mir hilfreiche
+                      Stichwörter und Funktionen nennen"</li>
                   </ol>
-                  Zusätlich wird empfohlen, der KI genau zu sagen, in welchem Format sie helfen soll. Soll sie dir Fragen stellen? Oder soll sie dir einfach etwas mit Beispielen erklären?<br>
-                  Im folgenden Bild siehst du, wie man alle diese Punkte in einem Prompt vereinen kann, nebst einem Negativbeispiel: <br>
+                </li>
+                <li>
+                  <p>Zusätlich wird empfohlen, der KI genau zu sagen, in welchem Format sie helfen soll. Soll sie dir
+                  Fragen stellen? Oder soll sie dir einfach etwas mit Beispielen erklären?</p>
+                  <p>Im folgenden Bild siehst du, wie man alle diese Punkte in einem Prompt vereinen kann, nebst einem
+                  Negativbeispiel:</p>
                   <img src="pedagogical-prompts.png" alt="Positives und negatives Promptbeispiel">
                 </li>
-                </ul>
+              </ul>
             </details>
           </article>
         </li>
