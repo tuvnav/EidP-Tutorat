@@ -1,0 +1,47 @@
+Vorbereitung pro Woche:
+
+	- Mustererklärung pro Codeaufgabe
+	- Variationsaufgaben pro Codeaufgabe
+	- Zusatzaufgaben
+	- Wichtigste Konzepte aus der Vorlesung
+	- Häufige Fehler
+	- Bonus-Konzepte (z. B. call per value / per reference)
+
+
+
+
+
+
+
+Ablauf Standardsitzung:
+
+- Vorstellende aussuchen (5 min)
+
+- Vorbereitung (10-15 min):
+	- Vorstellende bereiten Präsentation vor
+		=> Vorlagen: Code annotieren / in Formel übersetzen / potenzielle Fehler aufzeigen
+				+ Vorgehensweise erklären 
+	- andere wiederholen Vorlesung
+		=> Vorlagen: 
+			- Liste mit wesentlichen Konzepten
+			- Syntax-Liste: selbstständige Auswahl der neuen Befehle, Erklärung in eigenen Worten, Beispiel, Hinweise
+			- Fragen sammeln
+
+
+- Besprechung Vorlesung im Plenum (15 min):
+	=> eine Gruppe präsentiert, andere ergänzen danach
+	=> Bündelun durch Tutor
+
+- Vorstellung der Übungsaufgaben (20-40 min)
+	=> Mustererklärung durch Tutor oder Erklärung durch Vorstellende
+	=> Musterlösungen vergleichen (jeder individuell und dann im Plenum)
+	=> variierende Aufgaben
+	=> Fragen klären
+
+- Vorstellung häufige Fehler durch Tutor (5-10 min)
+
+- Bonuszeit: Bonus-Konzepte, Zusatzaufgaben ()
+
+
+
+ 
