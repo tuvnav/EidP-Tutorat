@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Hausaufgaben & KI</title>
   <link rel="stylesheet" href="styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..700&family=Quicksand:wght@300..700&display=swap..700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..700&family=Quicksand:wght@300..700&display=swap..700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
 </head>
 
 <script src="main.js"></script>
@@ -16,8 +18,9 @@
 <body class="page-hausaufgaben">
   <header class="site-header">
     <div class="container">
-            <h1><img src="icons/braces-asterisk_blue.svg" fill="currentColor" alt="braces" width="30" height="30"> EidP: Tipps & Ressourcen</h1>
-        <nav class="nav">
+      <h1><img src="icons/braces-asterisk_blue.svg" fill="currentColor" alt="braces" width="30" height="30"> EidP: Tipps
+        & Ressourcen</h1>
+      <nav class="nav">
         <a href="index.html">Start</a>
         <a href="hausaufgaben.html">Hausaufgaben & KI</a>
         <a href="ressourcen.html">Zusätzliche Lernressourcen</a>
@@ -32,7 +35,8 @@
     <section class="instructions">
       <ol>
         <li>
-          Probiere erstmal mithilfe der Vorlesungsfolien und der Python-Dokumentation, auf Lösungen zu kommen. Wenn du die Aufgabe nicht verstehst oder stecken bleibst, hilft der Betreuungs-Chat über Git. 
+          Probiere erstmal mithilfe der Vorlesungsfolien und der Python-Dokumentation, auf Lösungen zu kommen. Wenn du
+          die Aufgabe nicht verstehst oder stecken bleibst, hilft der Betreuungs-Chat über Git.
           <article class="card">
             <details class="toggle">
               <summary>Tipps zum Umgang mit der Dokumentation</summary>
@@ -57,17 +61,18 @@
                 <li>In der Klausur hast du keine KI, sondern nur die Python-Dokumentation. Es ist eine Fähigkeit an
                   sich, mit der Python-Dokumentation umzugehen, die du für die Klausur am besten auch üben und
                   automatisieren solltest.</li>
-                <li>Beim Überfliegen der Dokumentation stößt du auf neue Methoden und Attribute, die später nützlich
-                  sind. Wenn du zu dem gegebenen Zeitpunkt in der Zukunft auf ein neues Problem stößt, wo eine der
-                  überflogenen Elemente passen könnte, wirst du dich zurückerinnern, dass du so etwas Ähnliches schon
-                  mal gesehen hast. So steigt die Wahrscheinlichkeit, dass du neue Methoden und Attribute kennenlernst
+                <li>Beim Überfliegen der Dokumentation stößt du auf neue Befehle und Keywords, die später nützlich
+                  sind. Wenn du zu dem gegebenen Zeitpunkt in der Zukunft auf ein neues Problem stößt, wo eines der
+                  überflogenen Sprackonstrukte passen könnte, wirst du dich zurückerinnern, dass du so etwas Ähnliches
+                  schon
+                  mal gesehen hast. So steigt die Wahrscheinlichkeit, dass du neue Syntax und Konzepte kennenlernst
                   und nutzt.
                 </li>
               </ol>
             </details>
           </article>
         </li>
-        <li>
+        <li id="KI-Nutzung">
           Nutze die KI nur, wenn du stecken bleibst. Stecken bleiben heißt:
           <ul>
             <li>Du hast die Vorlesungsfolien und Dokumentation auf die relevanten Informationen durchsucht.</li>
@@ -83,10 +88,11 @@
           <article class="card">
             <details class="toggle">
               <summary>Vorlagen für Prompts für ChatGPT & co.</summary>
-              <p>Lass dir keine vollständigen Lösungen anzeigen, sondern Hinweise und Hilfestellungen zu deinem konkreten
-              Problem liefern. Warum? Du bekommst Lösungen zu den Übungsaufgaben als Musterlösung und diese werden
-              zusätzlich im Tutorat besprochen. Verschenke kein Lernporenzial für die Klausur: Mache eigene Fehler und
-              lerne daraus!</p>
+              <p>Lass dir keine vollständigen Lösungen anzeigen, sondern Hinweise und Hilfestellungen zu deinem
+                konkreten
+                Problem liefern. Warum? Du bekommst Lösungen zu den Übungsaufgaben als Musterlösung und diese werden
+                zusätzlich im Tutorat besprochen. Verschenke kein Lernporenzial für die Klausur: Mache eigene Fehler und
+                lerne daraus!</p>
               So nutzt du die KI richtig:
               <ul>
                 <li>
@@ -150,27 +156,37 @@
               Hier sind helfende Prinzipien:
               <ul>
                 <li>
-                  Empfohlen wird, folgende 5 Kontextinformationen angeben:
+                  Empfohlen wird, folgende 5 Kontextinformationen anzugeben:
                   <ol>
-                    <li>In welche Rolle soll die KI schlüpfen: In unserem Fall eigentlich immer Informatik-Lehrerin oder
+                    <li>In welche Rolle soll die KI schlüpfen? In unserem Fall eigentlich immer Informatik-Lehrerin oder
                       -Tutor</li>
-                    <li>Was ist dein Niveau: Anfänger*in / mit Vorkenntnissen / du beherrschst die Grundalgen /
+                    <li>Was ist dein Niveau? Anfänger*in / mit Vorkenntnissen / du beherrschst die Grundalgen /
                       Fortgeschritten?</li>
                     <li>Problemkontext: Was ist die Aufgabe, was ist dein Code (falls vorhanden), was ist die Ausgabe
                       (falls vorhanden)</li>
                     <li>Problemnennung: Was genau ist dein Problem? Welche präzise Stelle oder Frage bereitet dir
                       Schwierigkeiten?</li>
-                    <li>Guardrails: Setze der KI Grenzen, wie viel sie dir helfen darf. Typischerweise: "Bitte nicht die
+                    <li>Guardrails: Setze der KI Grenzen, wie viel sie dir helfen darf. Typischerweise: "Bitte nicht
+                      die
                       Lösung verraten" oder "Bitte schreibe mir keine ganzen Code-Blöcke, aber du kannst mir hilfreiche
                       Stichwörter und Funktionen nennen"</li>
                   </ol>
                 </li>
                 <li>
                   <p>Zusätlich wird empfohlen, der KI genau zu sagen, in welchem Format sie helfen soll. Soll sie dir
-                  Fragen stellen? Oder soll sie dir einfach etwas mit Beispielen erklären?</p>
+                    Fragen stellen? Oder soll sie dir einfach etwas mit Beispielen erklären?</p>
                   <p>Im folgenden Bild siehst du, wie man alle diese Punkte in einem Prompt vereinen kann, nebst einem
-                  Negativbeispiel:</p>
-                  <img src="pedagogical-prompts.png" alt="Positives und negatives Promptbeispiel">
+                    Negativbeispiel:</p>
+                  <img src="Bilder/pedagogical-prompts.png" alt="Positives und negatives Promptbeispiel">
+                </li>
+                <li>
+                  <p>Du kannst auch mit <b>Autoprompting</b> experimentieren: Sage der KI, dass sie einen passenden
+                    Propmt an sich selbst schreiben soll, der zu deiner Situation passt.</p>
+                </li>
+                <li>
+                  <p>Aktuell (Stand Oktober 2025) hat ChatGPT auch einen "study mode", das auch in der kostenlosen
+                    Version verfügbar ist. Damit kannst du auch experimentieren.</p>
+                  <p class="center"><img src="Bilder/study-mode-gpt.png" alt="study mode in ChatGPT" width="600"></p>
                 </li>
               </ul>
             </details>

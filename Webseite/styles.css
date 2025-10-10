@@ -37,7 +37,7 @@
 
 * {
   box-sizing: border-box;
-      border-radius: 10px;
+  border-radius: 10px;
 }
 
 html,
@@ -102,15 +102,15 @@ a:hover {
 h1 {
   font-size: 15px;
   margin: 0;
-font-family: 'Funnel Display', system-ui, -apple-system, 'Segoe UI', Roboto, ui-sans-serif, Arial, sans-serif;
+  font-family: 'Funnel Display', system-ui, -apple-system, 'Segoe UI', Roboto, ui-sans-serif, Arial, sans-serif;
   font-weight: 800;
-     text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 h2 {
   margin: var(--space-5) 0 var(--space-2);
   line-height: 1.25;
- font-family: 'Ibarra Real Nova', system-ui, -apple-system, 'Segoe UI', Roboto, ui-sans-serif, Arial, sans-serif;
+  font-family: 'Ibarra Real Nova', system-ui, -apple-system, 'Segoe UI', Roboto, ui-sans-serif, Arial, sans-serif;
   font-weight: 800;
 }
 
@@ -197,6 +197,11 @@ main :where(ul ul, ol ol) {
 
 /* Details/Accordion */
 .toggle {
+  display: block;
+  width: max-content;
+  /* oder max-content */
+  max-width: 100%;
+  /* bricht um, wenn’s zu breit wird */
   margin: var(--space-3) 0;
   border: 1px solid var(--hairline);
   border-radius: 12px;
@@ -204,6 +209,8 @@ main :where(ul ul, ol ol) {
   background: var(--panel-tint);
   box-shadow: 0 1px 0 rgba(0, 0, 0, .02);
   transition: box-shadow .15s ease;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .toggle:hover {
@@ -222,11 +229,11 @@ main :where(ul ul, ol ol) {
 .toggle>summary::after {
   content: '▸';
   font-size: 30px;
-     font-style: normal !important;
+  font-style: normal !important;
   opacity: .6;
   transition: transform .15s ease;
   margin-left: auto;
-    margin-right: 8px;
+  margin-right: 8px;
   /* Caret rechts */
 }
 
@@ -263,25 +270,30 @@ img {
 }
 
 .bi {
-    margin-top: 7px;
+  margin-top: 7px;
   margin-left: 7px;
 }
+
 .bi2 {
-    position: relative;
-    flex-shrink: 0; /* Icon bleibt seine Größe */
+  position: relative;
+  flex-shrink: 0;
+  /* Icon bleibt seine Größe */
 
 }
+
 .alert {
   display: flex;
-  align-items: flex-start; /* Icon oben links ausrichten */
-  gap: 8px; /* Abstand zwischen Icon und Text */
-    /* Form */
+  align-items: flex-start;
+  /* Icon oben links ausrichten */
+  gap: 8px;
+  /* Abstand zwischen Icon und Text */
+  /* Form */
   padding: .8em .8em .8em;
   /* mehr Abstand zum Rahmen */
   margin: 0 .12em;
   /* leichte Außenluft */
   background:
-     #F7A901 !important;
+    #bcd1ff !important;
   /* Typografie */
   font: 700 1.18em/1.2 "Ibarra Real Nova", "Fraunces", "Cormorant Garamond",
     "Spectral", "Georgia", "Cambria", "Times New Roman", Times, serif;
@@ -316,43 +328,67 @@ img {
 .tipps {
   font-weight: 700;
   font-style: italic;
-    text-transform: uppercase;
-     letter-spacing: 2px;    
-      background: rgba(52, 212, 3, 0.63) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: var(--panel-tint);
 }
+
 .tipps::before {
-  content: url('icons/lightbulb-fill.svg');
+  content: "";
   display: inline-block;
-    filter: invert(100%);
   width: 32px;
   height: 32px;
-  margin-right: 8px; 
-  vertical-align: middle; 
-    margin-top: 7px;
-  margin-left: 10px;
-    margin-bottom: 10px;
+  vertical-align: middle;
+  margin: 7px 8px 10px 10px;
+
+  /* gewünschte Iconfarbe */
+  background-color: rgb(239, 216, 104);
+
+  /* WebKit & Standard getrennt setzen */
+  -webkit-mask-image: url('./icons/lightbulb-fill.svg');
+  mask-image: url('./icons/lightbulb-fill.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  /* oder 100% 100% */
+  mask-size: contain;
 }
 
 /* WISSENSCHAFT */
 .wissenschaft {
-    
-  font-weight: 700;  
+
+  font-weight: 700;
   font-style: italic;
-    text-transform: uppercase;
-     letter-spacing: 2px;    
-      background: #60a5fa7b !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: var(--panel-tint);
 }
+
 .wissenschaft::before {
-  content: url('icons/flask-fill.svg');
+  content: "";
   display: inline-block;
-    filter: invert(100%);
+  filter: invert(100%);
   width: 32px;
   height: 32px;
-  margin-right: 8px; 
-  vertical-align: middle; 
-    margin-top: 7px;
+  margin-right: 8px;
+  vertical-align: middle;
+  margin-top: 7px;
   margin-left: 10px;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+
+  background-color: #3b82f6;
+
+  -webkit-mask-image: url('icons/flask-fill.svg');
+  mask-image: url('icons/flask-fill.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  /* oder 100% 100% */
+  mask-size: contain;
 }
 
 
