@@ -33,32 +33,11 @@
   /* weicher Glow */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0f14;
-    --fg: #e5e7eb;
-    --muted: #9ca3af;
-    --card: #111827;
-    --accent: #60a5fa;
 
-    --hairline: rgba(255, 255, 255, .08);
-    --hairline-strong: rgba(255, 255, 255, .16);
-    --divider: rgba(255, 255, 255, .14);
-    --panel-tint: rgba(255, 255, 255, .02);
-    --code-bg: rgba(255, 255, 255, .06);
-
-    --accent-soft: rgba(96, 165, 250, .12);
-
-    --emph-bg: rgba(96, 165, 250, .20);
-    /* etwas transparenter im Dark Mode */
-    --emph-border: #93c5fd;
-    /* Blau 300–400 als Border */
-    --emph-glow: rgba(147, 197, 253, .28);
-  }
-}
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
+      border-radius: 10px;
 }
 
 html,
@@ -67,7 +46,7 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--fg);
-  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, ui-sans-serif, Arial;
+  font: 16px/1.6 'Funnel Display', system-ui, -apple-system, Segoe UI, Roboto, ui-sans-serif, Arial;
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -121,13 +100,18 @@ a:hover {
 
 /* Headings */
 h1 {
-  font-size: 20px;
-  margin: 0
+  font-size: 15px;
+  margin: 0;
+font-family: 'Funnel Display', system-ui, -apple-system, 'Segoe UI', Roboto, ui-sans-serif, Arial, sans-serif;
+  font-weight: 800;
+     text-transform: uppercase;
 }
 
 h2 {
   margin: var(--space-5) 0 var(--space-2);
   line-height: 1.25;
+ font-family: 'Ibarra Real Nova', system-ui, -apple-system, 'Segoe UI', Roboto, ui-sans-serif, Arial, sans-serif;
+  font-weight: 800;
 }
 
 h3 {
@@ -237,10 +221,12 @@ main :where(ul ul, ol ol) {
 
 .toggle>summary::after {
   content: '▸';
-  font-size: 12px;
+  font-size: 30px;
+     font-style: normal !important;
   opacity: .6;
   transition: transform .15s ease;
   margin-left: auto;
+    margin-right: 8px;
   /* Caret rechts */
 }
 
@@ -275,6 +261,100 @@ img {
   border-radius: 10px;
   margin-bottom: var(--space-3);
 }
+
+.bi {
+    margin-top: 7px;
+  margin-left: 7px;
+}
+.bi2 {
+    position: relative;
+    flex-shrink: 0; /* Icon bleibt seine Größe */
+
+}
+.alert {
+  display: flex;
+  align-items: flex-start; /* Icon oben links ausrichten */
+  gap: 8px; /* Abstand zwischen Icon und Text */
+    /* Form */
+  padding: .8em .8em .8em;
+  /* mehr Abstand zum Rahmen */
+  margin: 0 .12em;
+  /* leichte Außenluft */
+  background:
+     #F7A901 !important;
+  /* Typografie */
+  font: 700 1.18em/1.2 "Ibarra Real Nova", "Fraunces", "Cormorant Garamond",
+    "Spectral", "Georgia", "Cambria", "Times New Roman", Times, serif;
+  font-variant-ligatures: common-ligatures contextual;
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+  letter-spacing: .005em;
+
+  /* „Special Effects“ (dezent) */
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, .05),
+    /* subtile Tiefe */
+    0 0 0 2px color-mix(in oklab, var(--emph-glow) 50%, transparent);
+  /* weicher Außenring */
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .35);
+  /* leichte Aufhellung der Schrift */
+  transition: box-shadow .2s ease, background .2s ease, transform .05s ease;
+  vertical-align: baseline;
+}
+
+.alert:hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, .06),
+    0 0 0 3px color-mix(in oklab, var(--emph-glow) 70%, transparent);
+}
+
+.alert:focus-visible {
+  outline: 2px solid var(--emph-border);
+  outline-offset: 3px;
+}
+
+/* TIPPS ZUR UMSETZUNG */
+.tipps {
+  font-weight: 700;
+  font-style: italic;
+    text-transform: uppercase;
+     letter-spacing: 2px;    
+      background: rgba(52, 212, 3, 0.63) !important;
+}
+.tipps::before {
+  content: url('icons/lightbulb-fill.svg');
+  display: inline-block;
+    filter: invert(100%);
+  width: 32px;
+  height: 32px;
+  margin-right: 8px; 
+  vertical-align: middle; 
+    margin-top: 7px;
+  margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* WISSENSCHAFT */
+.wissenschaft {
+    
+  font-weight: 700;  
+  font-style: italic;
+    text-transform: uppercase;
+     letter-spacing: 2px;    
+      background: #60a5fa7b !important;
+}
+.wissenschaft::before {
+  content: url('icons/flask-fill.svg');
+  display: inline-block;
+    filter: invert(100%);
+  width: 32px;
+  height: 32px;
+  margin-right: 8px; 
+  vertical-align: middle; 
+    margin-top: 7px;
+  margin-left: 10px;
+    margin-bottom: 10px;
+}
+
 
 /* Tabellen (für Bild-Galerien) */
 main table {
@@ -427,71 +507,4 @@ main.container {
   .toggle:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
   }
-}
-
-/* Globales Styling für <strong> */
-:where(strong) {
-  /* Form */
-  display: inline-block;
-  padding: .18em .6em .24em;
-  /* mehr Abstand zum Rahmen */
-  margin: 0 .12em;
-  /* leichte Außenluft */
-  background:
-    linear-gradient(180deg, var(--emph-bg), color-mix(in oklab, var(--emph-bg) 80%, transparent));
-  /* Typografie */
-  font: 700 1.18em/1.2 "Ibarra Real Nova", "Fraunces", "Cormorant Garamond",
-    "Spectral", "Georgia", "Cambria", "Times New Roman", Times, serif;
-  font-variant-ligatures: common-ligatures contextual;
-  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
-  letter-spacing: .005em;
-
-  /* „Special Effects“ (dezent) */
-  box-shadow:
-    0 1px 0 rgba(0, 0, 0, .05),
-    /* subtile Tiefe */
-    0 0 0 2px color-mix(in oklab, var(--emph-glow) 50%, transparent);
-  /* weicher Außenring */
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .35);
-  /* leichte Aufhellung der Schrift */
-  transition: box-shadow .2s ease, background .2s ease, transform .05s ease;
-  vertical-align: baseline;
-}
-
-:where(strong):hover {
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, .06),
-    0 0 0 3px color-mix(in oklab, var(--emph-glow) 70%, transparent);
-}
-
-:where(strong):focus-visible {
-  outline: 2px solid var(--emph-border);
-  outline-offset: 3px;
-}
-
-/* In Überschriften etwas zivilisieren, damit es nicht „brüllt“ */
-h1 :where(strong),
-h2 :where(strong),
-h3 :where(strong) {
-  font-size: 1.08em;
-}
-
-/* Ausnahme: in Monospace-Prompts neutral lassen (keine Chips im Codeblock) */
-.prompt-text :where(strong) {
-  display: inline;
-  font: 700 1em/inherit ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: none;
-  box-shadow: none;
-  text-shadow: none;
-}
-
-/* Optional: „Plain“-Variante, falls du irgendwo den Chip bewusst deaktivieren willst */
-.strong-plain {
-  all: unset;
-  font-weight: 700;
-  font-style: italic;
 }

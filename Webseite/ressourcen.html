@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Erweiternde Lernressourcen</title>
   <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..700&family=Quicksand:wght@300..700&display=swap..700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 
 <script src="main.js"></script>
@@ -13,8 +16,7 @@
 <body class="page-ressourcen">
   <header class="site-header">
     <div class="container">
-      <h1>EidP: Tipps & Ressourcen</h1>
-      <nav class="nav">
+            <h1><img src="icons/braces-asterisk_blue.svg" fill="currentColor" alt="braces" width="30" height="30"> EidP: Tipps & Ressourcen</h1>      <nav class="nav">
         <a href="index.html">Start</a>
         <a href="hausaufgaben.html">Hausaufgaben & KI</a>
         <a href="ressourcen.html" aria-current="page">Zusätzliche Lernressourcen</a>
@@ -23,17 +25,18 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="lead">
-      <h2>Zusätzliche Lernressourcen</h2>
-      <p>Die Ressourcen werden ungefähr in absteigendem Schwierigkeitsgrad angezeigt.</p>
-        <p><strong>Achtung: Alle Ressourcen und Ideen sind keinesfalls als Ersatz für die Vorlesung und die
-          Übungsaufgaben gedacht, sondern als Ergänzung!</strong>
-      </p>
+          <main class="container">
+            <section class="lead">
+              <h2>Zusätzliche Lernressourcen</h2>
+              <p>Die Ressourcen werden ungefähr in absteigendem Schwierigkeitsgrad angezeigt.</p>
+                <div class="alert">
+                    <img class="bi2" src="icons/exclamation-triangle-fill.svg" alt="exclamation" width="30" height="30">
+                    <p>Achtung: Alle Ressourcen und Ideen sind keinesfalls als Ersatz für die Vorlesung und die Übungsaufgaben gedacht, sondern als Ergänzung!</p>
+                </div>
 
       <details class="toggle">
         <summary> Tipps zur Umgang mit der Seite</summary>
-        <p><strong>TLDR: Mach dir das Freizeit-Programmieren zur Gewohnheit. Das funktioniert am besten mit Aktivitäten, die dir Spaß machen!</strong></p>
+        <p class="alert">TLDR: Mach dir das Freizeit-Programmieren zur Gewohnheit. Das funktioniert am besten mit Aktivitäten, die dir Spaß machen!</p>
         <p>Fühlen sich die Vorlesungsinhalte zu schwer an und du schaffst kaum eine Teilaufgabe ohne ganz viel
           Hilfe von ChatGPT und co.? Oder willst du aus sonstwelchen Gründen Python- und
           Programmier-Grundkenntnisse eingehender vertiefen und dabei vielleicht sogar (ein bisschen) Spaß
@@ -67,7 +70,7 @@
 
     <h3>Eigene Projekte: Vibe-Coding</h3>
     <details class="toggle">
-      <summary> Tipps zur Umsetzung: eigene Projekte</summary>
+    <summary>Tipps zur Umsetzung: eigene Projekte</summary>
       <p>Solche Projekte sind häufig für Anfänger*innen sehr kompliziert. Da empfiehlt sich, LLMs wie ChatGPT und
         co. zur Hilfe heranzuziehen. Das Schöne ist: Auch wenn du die KI dir fast den ganzen Code schreiben
         lässt, wirst du wahrscheinlich viel lernen, wenn du den Code liest und (im Dialog mit der KI)
@@ -81,7 +84,7 @@
       <li><b>Für Zocker*innen: Plugins und Mods für existierende Computerspiele - aber am besten gleich in
           Python!</b>
         <details class="toggle">
-          <summary> Tipps zur Umsetzung</summary>
+          <summary class="tipps">Tipps zur Umsetzung</summary>
           <p>Viele der beliebten und weit verbreiteten Spiele erlauben kein Modding oder Plug-Ins in Python,
             sondern nur in anderen Sprachen
             (C++, C#, JS, Java, Lua...). Ich würde eher davon abraten, parallel zur Einführung in die
@@ -138,7 +141,11 @@
       </li>
     </ul>
     <br>
-
+        <details class="toggle">
+          <summary class="wissenschaft">Was sagt die Wissenschaft?</summary>
+          <p>Text hier einfügen.</p>
+        </details>
+    
     <h3>Retro-Spiele erstellen mit Pyxel</h3>
     <details class="toggle">
       <summary> Warum Pyxel?</summary>
