@@ -1,0 +1,12 @@
+@Eigene Projekte / Spaß
+- Project Based Learning empfohlen
+=> "Learning Programming with the PBL Method—Experiences on PBL Cases and Tutoring" 
+
+- Motivation 
+=> "Why students drop out CS1 course?"
+=> "Revisiting Why Students Drop CS1"
+=> "Introductory Programming a systematic review": Hohe Dropout-Quoten
+=> "Variables Associated with Achievement in Higher Education": Motivation auch wichtiger Faktor
+
+@Code lesen
+- 
