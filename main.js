@@ -39,34 +39,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Copy-to-clipboard für alle .copy-btn
 document.addEventListener('DOMContentLoaded', () => {
-    // Nur auf hausaufgaben.html ausführen
-    if (!document.body.classList.contains('page-hausaufgaben')) return;
+  // Nur auf hausaufgaben.html ausführen
+  if (!document.body.classList.contains('page-hausaufgaben')) return;
 
-    // Beispiel: Copy-to-Clipboard-Handler
-    document.addEventListener('click', async (e) => {
-        const btn = e.target.closest('.copy-btn');
-        if (!btn) return;
-        const id = btn.getAttribute('data-target');
-        const el = document.getElementById(id);
-        if (!el) return;
+  // Beispiel: Copy-to-Clipboard-Handler
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+    const id = btn.getAttribute('data-target');
+    const el = document.getElementById(id);
+    if (!el) return;
 
-        try {
-            await navigator.clipboard.writeText(el.textContent);
-            const old = btn.textContent;
-            btn.textContent = 'Kopiert!';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 1200);
-        } catch {
-            const range = document.createRange();
-            range.selectNodeContents(el);
-            const sel = window.getSelection();
-            sel.removeAllRanges();
-            sel.addRange(range);
-            document.execCommand('copy');
-            sel.removeAllRanges();
-            const old = btn.textContent;
-            btn.textContent = 'Kopiert!';
-            setTimeout(() => { btn.textContent = old; }, 1200);
-        }
-    });
+    try {
+      await navigator.clipboard.writeText(el.textContent);
+      const old = btn.textContent;
+      btn.textContent = 'Kopiert!';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 1200);
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+      const old = btn.textContent;
+      btn.textContent = 'Kopiert!';
+      setTimeout(() => { btn.textContent = old; }, 1200);
+    }
+  });
+});
+
+// Mobile-Navigation toggeln (Hamburger)
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (!btn || !nav) return;
+
+  const setOpen = (open) => {
+    btn.setAttribute('aria-expanded', String(open));
+    nav.hidden = !open;
+  };
+
+  // initial geschlossen (mobil)
+  setOpen(false);
+
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    setOpen(!open);
+  });
+
+  // außerhalb klicken → schließen
+  document.addEventListener('click', (e) => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    if (!open) return;
+    if (btn.contains(e.target) || nav.contains(e.target)) return;
+    setOpen(false);
+  });
+
+  // ESC zum Schließen
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
 });

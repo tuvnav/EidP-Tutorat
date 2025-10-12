@@ -18,9 +18,15 @@
 <body class="page-hausaufgaben">
   <header class="site-header">
     <div class="container">
-      <h1><img src="icons/braces-asterisk_blue.svg" fill="currentColor" alt="braces" width="30" height="30"> EidP: Tipps
-        & Ressourcen</h1>
-      <nav class="nav">
+      <h1><img src="icons/braces-asterisk_blue.svg" fill="currentColor" alt="braces" width="30" height="30"> EidP:
+        Tipps & Ressourcen</h1>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menü</span>
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <nav id="site-nav" class="nav" hidden>
         <a href="index.html">Start</a>
         <a href="hausaufgaben.html" aria-current="page">Hausaufgaben & KI</a>
         <a href="ressourcen.html">Zusätzliche Lernressourcen</a>
@@ -28,6 +34,7 @@
       </nav>
     </div>
   </header>
+
   <main class="container">
     <section class="lead">
       <h2>Wie bei Übungsaufgaben vorgehen und wie die KI benutzen?</h2>
