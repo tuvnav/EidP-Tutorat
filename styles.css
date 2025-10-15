@@ -366,8 +366,6 @@ img {
 .bi2 {
   position: relative;
   flex-shrink: 0;
-  /* Icon bleibt seine Größe */
-
 }
 
 .alert {
@@ -617,4 +615,67 @@ main.container {
   .toggle:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
   }
+}
+
+.feature-blocks {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0 4em;
+}
+
+.feature-blocks>.toggle {
+  width: 100%;
+}
+
+.feature-blocks .toggle {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.feature-blocks .toggle table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+
+.references {
+  margin: var(--space-5) 0;
+  padding-left: 1.4rem;
+}
+
+.references li {
+  margin: .4rem 0 .6rem;
+}
+
+.references a {
+  word-break: break-all;
+}
+
+sup a {
+  text-decoration: none;
+}
+
+sup a:hover {
+  text-decoration: underline;
+}
+
+.backref {
+  margin-left: .5rem;
+  font-size: .9em;
+  text-decoration: none;
+  opacity: .8;
+}
+
+.backref:hover {
+  text-decoration: underline;
+}
+
+:target {
+  scroll-margin-top: 80px;
+}
+
+.references li:target {
+  background: var(--accent-soft);
+  border-radius: 8px;
 }
